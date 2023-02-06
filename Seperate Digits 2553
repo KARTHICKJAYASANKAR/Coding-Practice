@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> separateDigits(vector<int>& nums) {
+
+        vector<int> v;
+        int i,n,d;
+        n=nums.size();
+        for(i=0;i<n;i++)
+        {
+            digits(nums[i],v,d); 
+        } 
+        return v;
+        
+    }
+
+    void digits(int a,vector<int> &v,int d)
+    {
+        if(a==0) return;
+        d=a%10;
+        a=a/10;
+        digits(a,v,d);
+        v.push_back(d);
+        return;
+
+    }
+};
+
