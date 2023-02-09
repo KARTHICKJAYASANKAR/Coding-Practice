@@ -1,0 +1,59 @@
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+
+        int i,j,k,n,nzprod=1,prod=1,count=0,zero=0;
+        vector<int> ans;
+        n=nums.size();
+        for(i=0;i<n;i++)
+        {
+
+            prod=prod*nums[i];
+            if(nums[i]==0)
+            zero++;
+            if(nums[i]!=0)
+            {
+               nzprod=nzprod*nums[i];
+               count++;
+            }
+        }
+
+        for(i=0;i<n;i++)
+        {
+            if(nums[i]!=0)
+            {
+                k= (prod)/(nums[i]);
+                ans.push_back(k);
+            }
+            else if(nums[i]==0)
+            {
+
+
+              if(count==0 || zero>1)
+              {
+                  nzprod=0;
+                  ans.push_back(nzprod);
+              }
+
+
+              else
+             {
+                
+                j= nzprod;
+                ans.push_back(j);
+                
+        
+             }
+
+
+            }
+        }    
+
+        return ans;
+
+
+        
+
+        
+    }
+};
