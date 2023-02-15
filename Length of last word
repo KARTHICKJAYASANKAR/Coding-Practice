@@ -3,6 +3,7 @@ public:
     int lengthOfLastWord(string s) {
 
         vector<char>v;
+        
         int n,i,temp,count=0;
         for(i=0;i<s.length();i++)
         {
