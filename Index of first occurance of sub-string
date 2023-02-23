@@ -7,7 +7,6 @@ public:
         if(index != string::npos) return index;
         else return -1;
         
-        
     }
     
 };
