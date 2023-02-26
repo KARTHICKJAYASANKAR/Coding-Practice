@@ -4,6 +4,7 @@ public:
         unordered_map<int,int> m;
         int max,maj;
         max=0;
+        
         for(auto x : nums)
         {
             m[x]++;
