@@ -1,1 +1,30 @@
 
+class Solution {
+public:
+    vector<int> intersection(vector<vector<int>>& nums) {
+      
+      int i,n;
+      vector<int>v;
+      map<int,int>m;
+      n = nums.size();
+      for(i=0; i<n; i++)
+      {
+          nums[i].erase( unique(nums[i].begin(),nums[i].end()) ,nums[i].end() );
+          for(auto x : nums[i])
+          {
+              m[x]++;
+          }
+
+      }
+      for(auto x : m)
+      {
+          if(x.second == n)
+          v.push_back(x.first);
+      }
+
+      return v;
+
+
+        
+    }
+};
